@@ -136,7 +136,15 @@
             </div>
           </div>
 
-          <button class="submit-btn" type="submit">submit</button>
+          <div class="container">
+            <button class="submit-btn" type="submit"  onclick="openPopup()">submit</button>
+             <div class="popup" id="popup">
+               <img src="tick.png">
+               <h2>Thank You !</h2>
+                <p>Your details has been successfully submitted. Thanks !</p>
+                <button type="button" onclick="closePopup()">OK</button>
+              </div>
+          </div>
         </form>
       </div>
     </section>
