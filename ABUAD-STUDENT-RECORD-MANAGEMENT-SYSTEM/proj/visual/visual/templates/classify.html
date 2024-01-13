@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABUAD Student Record Form</title>
+    <link rel="stylesheet" href="{% static 'Style/style.css' %}" />
+
+
+    <script defer src="{% static 'Script/script.js' %}"></script>
+
+  </head>
+  <body>
+    <header class="header">
+      <h1>abuad student record registration form</h1>
+      <div class="banner">
+        <div class="form-title"><h2>student data</h2></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-center">
+        <form id="form"  method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+          <div class="input-field">
+            <div class="box">
+              <label for="surname">surname:</label>
+              <div class="input-section">
+                <input type="text" name="surname" id="surname" required/>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="firstname">first name:</label>
+              <div class="input-section">
+                <input type="text" name="firstname" id="firstname" required/>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="surname">middle name:</label>
+              <div class="input-section">
+                <input type="text" name="middlename" id="middlename" required/>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="dateofbirth">date of birth:</label>
+              <div class="input-section">
+                <input type="date" name="dateofbirth" id="dateofbirth" required/>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="department">department:</label>
+              <div class="input-section">
+                <select name="department" id="department">
+                  <option value="architecture">architecture</option>
+                  <option value="biochemistry">biochemistry</option>
+                  <option value="biotechnology">biotechnology</option>
+                  <option value="computer-science">computer science</option>
+                  <option value="geology">geology</option>
+                  <option value="human-biology">human biology</option>
+                  <option value="industrial chemistry">
+                    industrial chemistry
+                  </option>
+                  <option value="microbiology">microbiology</option>
+                  <option value="petroleum chemistry">
+                    petroleum chemistry
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="matricno">matriculation number:</label>
+              <div class="input-section">
+                <input type="text" name="matricno" id="matricno" required/>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="level">level:</label>
+              <div class="input-section">
+                <input type="text" name="level" id="level" required/>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="phonenumber">phone number:</label>
+              <div class="input-section phoneno">
+                <input type="number" name="phonenumber" id="phonenumber" required/>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="gender">gender:</label>
+              <div class="input-section gend">
+                <select name="gender" id="gender">
+                  <option value="male">male</option>
+                  <option value="female">female</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="residentialaddress">residential address:</label>
+              <div class="input-section">
+                <input
+                  type="text"
+                  name="residentialaddress"
+                  id="residentialaddress"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="emailaddress">email address:</label>
+              <div class="input-section">
+                <input type="email" name="emailaddress" id="emailaddress" required/>
+              </div>
+            </div>
+
+            <div class="box">
+              <label for="passportphoto">passport photo:</label>
+              <div class="input-section passportphoto">
+                <input
+                  type="file"
+                  name="image"
+                  id="passportphoto"
+                  accept=".jpg,.png,.jpeg,.tif "
+                  hidden="hidden"
+                  required
+                />
+                <span id="custom-text">upload image (.jpg, .png, ...)</span>
+                <button type="button" id="custom-button"></button>
+              </div>
+            </div>
+          </div>
+
+          <button class="submit-btn" type="submit">submit</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

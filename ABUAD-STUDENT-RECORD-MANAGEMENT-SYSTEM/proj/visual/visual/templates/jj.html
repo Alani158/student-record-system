@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Classification</title>
+</head>
+<body>
+    <h1>Image Classification Result</h1>
+    <title>Image Upload and Display</title>
+
+    <h1>Image Upload and Display</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <input type="file" name="image"  id="imageInput">
+    <button type="button" onclick="uploadImage()">Upload Image</button>
+    </form>
+    <div id="imageContainer">
+        <img id="uploadedImage" src="" alt="Uploaded Image" width="300">
+    </div>
+    <h2>Classification Result:</h2>
+   
+        <p>{{ result }}</p>
+    
+    <script>
+        function uploadImage() {
+            const imageInput = document.getElementById('imageInput');
+            const uploadedImage = document.getElementById('uploadedImage');
+            const imageContainer = document.getElementById('imageContainer');
+
+            if (imageInput.files && imageInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    uploadedImage.src = e.target.result;
+                    imageContainer.style.display = 'block';
+                }
+
+                reader.readAsDataURL(imageInput.files[0]);
+            }
+        }
+    </script>
+
+</body>
+</html>
