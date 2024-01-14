@@ -53,7 +53,11 @@ def classify_image(request):
      )
         print(f"insert response : {response}")
 
+<<<<<<< HEAD
         return render(request, 'Summary.html', {'surname':surname,'middlename':middlename, 'Firstname': firstname,'matric_no':matricno ,'level':level,'dateofbirth':dateofbirth,'phonenumber':phonenumber,'residentialaddress':residentialaddress,'emailaddress':emailaddress,'department':department,'matric_no':matricno,'image_path':image_path})
+=======
+        return render(request, 'classify.html', {'Firstname': firstname})
+>>>>>>> origin/main
 
     return render(request, 'classify.html')
 
